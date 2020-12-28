@@ -9,12 +9,11 @@ var bursting = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("AnimatedSprite").connect("input_event", self, "_input_event")
+	self.connect("input_event", self, "_on_character_touched")
 	$AnimatedSprite.animation = playerSprite
 	$Particles2D.hide()
-	
-func _input_event(viewport, event, shape_idx):
-	#if event is InputEventMouseButton:
+
+func _on_character_touched(viewport, event, shape_idx):
 	if event is InputEventScreenTouch:
 		if event.is_pressed() and !bursting:
 			run()
