@@ -21,6 +21,7 @@ func _input_event(viewport, event, shape_idx):
 	
 func run():
 	bursting = true
+	print("click")
 	$SoundClicked.play()
 		
 	$AnimatedSprite.hide()

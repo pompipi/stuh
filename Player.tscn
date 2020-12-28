@@ -46,14 +46,14 @@ animations = [ {
 "name": "motorbike",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "turtle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "star",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "turtle",
 "speed": 5.0
 } ]
 
@@ -82,11 +82,9 @@ position = Vector2( -10.3181, -16.6677 )
 scale = Vector2( 0.732787, 0.732787 )
 frames = SubResource( 3 )
 animation = "star"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -6.34961, -6.34961 )
 shape = SubResource( 4 )
 

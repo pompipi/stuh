@@ -8,10 +8,10 @@ Also to learn game development and Godot.
 
 Plan to refine the gameplay:
 
-    * Purpose
-    * Mechanics: what happens when star is touched? sound, visual
-    * Goals: What motivates to play, and sense of achievement
-    * Rewards:
-    * Decision
-    * Context: What do I want to child to imagine. Immersion, presence
+* Purpose
+* Mechanics: what happens when star is touched? sound, visual
+* Goals: What motivates to play, and sense of achievement
+* Rewards:
+* Decision
+* Context: What do I want to child to imagine. Immersion, presence
 
