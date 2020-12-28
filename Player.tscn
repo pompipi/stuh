@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/bus/bus_up.png" type="Texture" id=8]
 [ext_resource path="res://assets/motorbike/motorbike _up.png" type="Texture" id=9]
 [ext_resource path="res://assets/motorbike/motorbike.png" type="Texture" id=10]
-[ext_resource path="res://assets/pop.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sound/pop.wav" type="AudioStream" id=11]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true
@@ -46,14 +46,14 @@ animations = [ {
 "name": "motorbike",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "turtle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "star",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "turtle",
 "speed": 5.0
 } ]
 

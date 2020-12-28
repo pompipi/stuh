@@ -12,3 +12,9 @@ data_*/
 
 # Distribution Binaries
 Android/
+
+# Proprietary sound files
+*.ogg
+*.ogg.*
+*.wav
+*.wav.*
