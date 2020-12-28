@@ -23,8 +23,7 @@ func run():
 	bursting = true
 	$SoundClicked.play()
 		
-	$AnimatedSprite.hide()
-	$Particles2D.show()
+	showBurst()
 
 	yield(get_tree().create_timer(4.0), "timeout")
 	
@@ -42,10 +41,18 @@ func run():
 		$Particles2D.set_texture(imageSmallStar)
 	$AnimatedSprite.animation = playerSprite
 	
-	$AnimatedSprite.show()
-	$Particles2D.hide()
+	showClickable()
+		
 	bursting = false
 	
+func showClickable():
+	$AnimatedSprite.show()
+	$Particles2D.hide()
+
+func showBurst():
+	$AnimatedSprite.hide()
+	$Particles2D.show()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
