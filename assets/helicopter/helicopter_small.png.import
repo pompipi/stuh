@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/motorbike _small.png-4e3d3d75f365f0db78a24e8d0d695bb6.stex"
+path="res://.import/helicopter_small.png-28c354cf679beac309002ef0fbada5fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/motorbike/motorbike _small.png"
-dest_files=[ "res://.import/motorbike _small.png-4e3d3d75f365f0db78a24e8d0d695bb6.stex" ]
+source_file="res://assets/helicopter/helicopter_small.png"
+dest_files=[ "res://.import/helicopter_small.png-28c354cf679beac309002ef0fbada5fd.stex" ]
 
 [params]
 

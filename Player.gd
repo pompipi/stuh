@@ -1,17 +1,29 @@
 extends Area2D
 
-var playerSprite = "star"
-var imageSmallTurtle = load("res://assets/turtle/turtle_small.png")
-var imageSmallStar = load("res://assets/star/star_small.png")
-var imageSmallBus = load("res://assets/bus/bus_small.png")
-var imageSmallMotorbike = load("res://assets/motorbike/motorbike _small.png")
+var levels = [	"star",
+				"turtle",
+				"bus",
+				"motorbike",
+				"plane",
+				"helicopter",
+				"lion",
+				"giraffe"]
+			
+var _current_level = 0
+var _level_small_image = {}
+
 var bursting = false
+
+func _init():
+	for i in levels:
+		_level_small_image[i] = load("res://assets/" + i + "/" + i + "_small.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.connect("input_event", self, "_on_character_touched")
-	$AnimatedSprite.animation = playerSprite
+	$AnimatedSprite.animation = levels[_current_level]
 	$Particles2D.hide()
+	
 
 func _on_character_touched(viewport, event, shape_idx):
 	if event is InputEventScreenTouch:
@@ -20,36 +32,34 @@ func _on_character_touched(viewport, event, shape_idx):
 	
 func run():
 	bursting = true
-	print("click")
+	
 	$SoundClicked.play()
-		
-	showBurst()
-
+	show_burst()
 	yield(get_tree().create_timer(4.0), "timeout")
-	
-	if playerSprite == "star":
-		playerSprite = "turtle"
-		$Particles2D.set_texture(imageSmallTurtle)
-	elif playerSprite == "turtle":
-		playerSprite = "bus"
-		$Particles2D.set_texture(imageSmallBus)
-	elif playerSprite == "bus":
-		playerSprite = "motorbike"
-		$Particles2D.set_texture(imageSmallMotorbike)
-	else:
-		playerSprite = "star"
-		$Particles2D.set_texture(imageSmallStar)
-	$AnimatedSprite.animation = playerSprite
-	
-	showClickable()
+	load_next_level()
+	show_clickable()
 		
 	bursting = false
+
+func load_next_level():
+	var next_level
 	
-func showClickable():
+	if _current_level < levels.size() - 1:
+		next_level = _current_level + 1
+	else:
+		next_level = 0
+	
+	$Particles2D.set_texture(_level_small_image[levels[next_level]])
+	$AnimatedSprite.animation = levels[next_level]
+	
+	_current_level = next_level
+	print(_current_level)
+	
+func show_clickable():
 	$AnimatedSprite.show()
 	$Particles2D.hide()
 
-func showBurst():
+func show_burst():
 	$AnimatedSprite.hide()
 	$Particles2D.show()
 
